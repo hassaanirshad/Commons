@@ -6,9 +6,12 @@ jdk:
  - openjdk8
 env:
  - SCRIPT_ARG=hello
+services:
+ - docker
 script:
  - ./make
  - ./test "$SCRIPT_ARG" "$HOME" "$JRUBY_OPTS" "$TRAVIS_BUILD_WEB_URL" "$TRAVIS_EVENT_TYPE" "$test_var_travis_1" "$test_var_travis_2"
+ - docker build -t common-docker-test -f Dockerfile .
 notifications:
  email:
   - hassaanirshad88@gmail.com
