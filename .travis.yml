@@ -4,8 +4,11 @@ language:
  - java
 jdk:
  - openjdk8
+env:
+ - SCRIPT_ARG=hello
 script:
  - ./make
+ - ./test "$SCRIPT_ARG" "$HOME" "$JRUBY_OPTS" "$TRAVIS_BUILD_WEB_URL" "$TRAVIS_EVENT_TYPE"
 notifications:
  email:
   - hassaanirshad88@gmail.com

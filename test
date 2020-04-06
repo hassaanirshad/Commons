@@ -1,4 +1,5 @@
 #!/bin/bash
 
 ls build 2>&1 &>/dev/null || echo "Error: Missing build dirrectory" \
-	&& java -cp build common.io.IOTest $@
+	&& java -cp build common.io.IOTest $@ || echo "Error: Failed IOTest" \
+	&& java -cp build common.print.PrintArgs $@ || echo "Error: Failed PrintArgs"
