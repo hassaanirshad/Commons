@@ -12,7 +12,7 @@ script:
  - ./make
  - ./test "$SCRIPT_ARG" "$HOME" "$JRUBY_OPTS" "$TRAVIS_BUILD_WEB_URL" "$TRAVIS_EVENT_TYPE" "$test_var_travis_1" "$test_var_travis_2"
  - echo "$TRAVIS_EVENT_TYPE"
- - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ]; then echo "Starting push..." && docker build -t hassaanirshad/common-test:latest -f Dockerfile . && docker images && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push hassaanirshad/common-test:latest && echo "Done"; fi'
+ - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then echo "Starting push..." && docker build -t hassaanirshad/common-test:latest -f Dockerfile . && docker images && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push hassaanirshad/common-test:latest && echo "Done"; fi'
 notifications:
  email:
   - hassaanirshad88@gmail.com
