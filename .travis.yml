@@ -1,11 +1,11 @@
 dist:
-	- bionic
+ - bionic
 language:
-	- java
+ - java
 jdk:
-	- openjdk8
+ - openjdk8
 script:
-	- ./make
+ - ./make
 notifications:
-	email:
-		- hassaanirshad88@gmail.com
+ email:
+  - hassaanirshad88@gmail.com
