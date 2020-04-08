@@ -6,6 +6,7 @@ jdk:
  - openjdk8
 env:
  - SCRIPT_ARG=hello
+ - SCRIPT_ARG=world
 services:
  - docker
 script:
